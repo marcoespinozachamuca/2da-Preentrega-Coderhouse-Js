@@ -1,0 +1,55 @@
+// Estilos generales
+body {
+  font-family: 'Arial', sans-serif;
+  color: $body-text-color;
+  margin: 0;
+  padding: 0;
+  background-color: $body-bg-color;
+  @include box-sizing;
+}
+
+// Header
+header {
+  background-color: $primary-bg-color;
+  padding: $padding-standard 0;
+  color: $link-color;
+  @include box-sizing;
+  position: relative;
+  z-index: 1000;
+}
+
+// Footer
+footer {
+  background-color: $primary-bg-color;
+  color: $primary-text-color;
+  padding: $padding-standard;
+  text-align: center;
+  margin-top: 10px;
+  position: relative;
+  @include box-sizing;
+
+  ul {
+    @include flex-center(row, 15px);
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+
+    li {
+      margin: 0;
+
+      a {
+        color: $link-color;
+        text-decoration: none;
+        @include transition-color;
+
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}

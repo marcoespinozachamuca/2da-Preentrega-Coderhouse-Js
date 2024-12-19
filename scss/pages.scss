@@ -1,0 +1,260 @@
+// Estilos para index.html
+.index-page {
+  .section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gap-standard;
+    align-items: center;
+    padding: 15px 20px;
+    @include box-sizing;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      padding: 10px;
+      gap: 10px;
+    }
+  }
+
+  .text-content {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    @include box-sizing;
+
+    h1, p, h2, blockquote {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    h1 { animation-delay: 0.2s; }
+    p { animation-delay: 0.4s; }
+    h2 { animation-delay: 0.6s; }
+    blockquote { animation-delay: 0.8s; }
+  }
+
+  figure {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideIn 1s forwards;
+    animation-delay: 1s;
+
+    img {
+      max-width: 100%;
+      padding: 5px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+    margin: 8px 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-left: 4px solid $link-hover-color;
+    @include box-sizing;
+  }
+}
+
+// Estilos específicos para discografia.html
+.discografia-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .album {
+    background-color: #F8F9FA;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// Estilos específicos para contacto.html
+.contacto-page {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  @include box-sizing;
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F8F9FA;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ccc;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin: 5px 0;
+    }
+
+    button {
+      padding: 10px;
+      background-color: $primary-bg-color;
+      color: $link-color;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+
+      &:hover {
+        background-color: $link-hover-color;
+      }
+    }
+  }
+}
+
+// Estilos específicos para galeria.html
+.galeria-page {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+
+  .galeria-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    gap: 20px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .galeria-item {
+    background-color: #F8F9FA;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img,
+    iframe {
+      max-width: 100%;
+        max-height: 240px; // Aumentado a 240px para que las imágenes sean un poco más grandes
+        border-radius: 8px;
+        margin-bottom: 10px;
+        object-fit: cover;
+    }
+  }
+}
+
+// Estilos específicos para historia.html
+.historia-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  @include box-sizing;
+  padding-top: 50px;
+
+  #historia {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 0;
+  }
+
+  h1, h2, h3 {
+    color: #343434;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    text-align: justify;
+  }
+
+  .imagenes-horizontales {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .soda-stereo-img {
+      max-width: 500px; // Establece un tamaño fijo para las imágenes
+      text-align: center;
+
+      img {
+        max-width: 120%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      figcaption {
+        font-size: 0.8em;
+        color: #555;
+        margin-top: 5px;
+        font-style: italic;
+      }
+    }
+  }
+}

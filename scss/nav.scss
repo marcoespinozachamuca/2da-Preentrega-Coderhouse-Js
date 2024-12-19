@@ -1,0 +1,23 @@
+// Estilos para el menú de navegación utilizando Bootstrap
+.navbar {
+    background-color: $primary-bg-color; // Color de fondo del menú de navegación
+    
+    .nav-link {
+      color: $link-color; // Color de los enlaces
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: $link-hover-color; // Color al pasar el mouse sobre el enlace
+      }
+    }
+  
+    .navbar-nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px; // Espaciado entre los elementos del menú
+    }
+  }
+  

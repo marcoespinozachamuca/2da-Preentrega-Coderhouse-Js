@@ -1,0 +1,8 @@
+// Importar todos los módulos SCSS
+@import 'variables';
+@import 'nav';  // Añadimos los estilos del menú
+@import 'mixins';
+@import 'base';
+@import 'components';
+@import 'pages';
+@import 'animations';
